@@ -77,9 +77,7 @@ public class HttpReqWithoutBuilder {
 	// may need different if block with different checkers
 
 	// Source for 3 problem that is inconsistent error
-	public void execute(String url, String method, Map<String, String> header,
-			Map<String, String> queryParam,
-			String body, Integer timeOut) {
+	public void execute() {
 		boolean validationfailed = false;
 		if (url == null || method == null || 
 				header == null || queryParam == null || 
