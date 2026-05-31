@@ -4,8 +4,8 @@ import java.util.Map;
 
 import com.masood.HttpRequestObject.HttpReqWithoutBuilder;
 
-public class HttpRequestRunnerWithoutBuilder {
-	public static void main(String[] args) {
+public class HttpRequestRunnerWithoutBuilder implements HttpRequestRunner {
+	public void run() {
 		HttpReqWithoutBuilder req = new HttpReqWithoutBuilder("http://github.com/masoodkhan/Builderpattern");
 		req.setBody("name : masood");
 		req.setMethod("PATCH");
