@@ -1,4 +1,4 @@
-package com.masood.HttpRequestObject;
+package com.masood.WithoutBuilderClasses;
 
 import java.util.Map;
 
@@ -77,17 +77,19 @@ public class HttpReqWithoutBuilder {
 	// may need different if block with different checkers
 
 	// Source for 3 problem that is inconsistent error
-	public void execute() {
+	public String execute() {
 		boolean validationfailed = false;
 		if (url == null || method == null || 
 				header == null || queryParam == null || 
 				body == null || timeOut == null)
 			validationfailed = true;
 
-		if (validationfailed)
-			System.out.println("Some fields are missing please check before" + "executing.");
-		else
+		if (validationfailed) {
+			return "Some fields are missing please check before executing.";
+		} else {
 			System.out.println("Everything is fine u can execute");
+			return toString();
+		}
 
 	}
 
@@ -115,4 +117,10 @@ public class HttpReqWithoutBuilder {
 		return timeOut;
 	}
 
+	@Override
+	public String toString() {
+		return "HttpReqWithoutBuilder [url=" + url + ", method=" + method + ", header=" + header + ", queryParam="
+				+ queryParam + ", body=" + body + ", timeOut=" + timeOut + "]";
+	}
+	
 }

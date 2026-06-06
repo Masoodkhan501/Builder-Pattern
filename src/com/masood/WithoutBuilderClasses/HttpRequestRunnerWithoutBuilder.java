@@ -1,11 +1,10 @@
-package com.masood;
+package com.masood.WithoutBuilderClasses;
 
 import java.util.Map;
 
-import com.masood.HttpRequestObject.HttpReqWithoutBuilder;
 
-public class HttpRequestRunnerWithoutBuilder implements HttpRequestRunner {
-	public void run() {
+public class HttpRequestRunnerWithoutBuilder {
+	public void execute() {
 		HttpReqWithoutBuilder req = new HttpReqWithoutBuilder("http://github.com/masoodkhan/Builderpattern");
 		req.setBody("name : masood");
 		req.setMethod("PATCH");
@@ -14,7 +13,7 @@ public class HttpRequestRunnerWithoutBuilder implements HttpRequestRunner {
 		
 	// 	3. if i execute the req without setting the timeout maybe this can be a 
 	//	required field in the req object. Validation field declared in the httpreq obj.
-		
-		req.execute();
+//		req.setTimeOut(20);
+		System.out.println(req.execute());
 	}
 }
