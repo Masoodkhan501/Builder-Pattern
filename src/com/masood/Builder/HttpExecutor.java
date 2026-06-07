@@ -1,6 +1,6 @@
 package com.masood.Builder;
 
-import java.util.List;
+import com.masood.ExceptionBundle.RequestValidationError;
 
 public class HttpExecutor {
 	
@@ -10,16 +10,9 @@ public class HttpExecutor {
 		this.req = req;
 	}
 	
-	public String execute() {
-		List<String> errors = ValidateHttp.validate(req);
-		String errorResult = "";
-		if(errors.isEmpty()) return "everything is good. Executed perfectly";
-		else {
-			for(String error:errors) {
-				errorResult += error;
-			}
-			return errorResult;
-		}
+	public String execute() throws RequestValidationError{
+		ValidateHttp.validate(req);
+		return "everything is good. Executed perfectly";
 	}
 
 }

@@ -24,7 +24,7 @@ public class HttpRequestObject1 {
 			String result = executor.execute();
 			System.out.println(result);
 		} catch(RequestValidationError re) {
-			re.getMessage();
+			System.out.println(re.getMessage());
 		}
 		
 		
