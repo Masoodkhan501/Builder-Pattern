@@ -19,7 +19,7 @@ public class HttpRequestObject1 {
 		/* execution code which implements the builder pattern */
 		
 		try {
-			HttpReqWithBuilder req = HttpRequestBuilder.builder().URL("https://google.com").Build();
+			HttpReqWithBuilder req = HttpRequestBuilder.builder().url("https://google.com").build();
 			HttpExecutor executor = new HttpExecutor(req);
 			String result = executor.execute();
 			System.out.println(result);

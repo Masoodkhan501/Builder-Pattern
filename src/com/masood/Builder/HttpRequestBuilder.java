@@ -2,41 +2,44 @@ package com.masood.Builder;
 
 import java.util.Map;
 
+import com.masood.ExceptionBundle.RequestValidationError;
+
 public class HttpRequestBuilder {
 
 	private HttpReqWithBuilder req = new HttpReqWithBuilder();
 
-	public HttpRequestBuilder URL(String url) {
+	public HttpRequestBuilder url(String url) {
 		req.url = url;
 		return this;
 	}
 
-	public HttpRequestBuilder Method(String method) {
+	public HttpRequestBuilder method(String method) {
 		req.method = method;
 		return this;
 	}
 
-	public HttpRequestBuilder Header(Map<String, String> header) {
+	public HttpRequestBuilder header(Map<String, String> header) {
 		req.header = header;
 		return this;
 	}
 
-	public HttpRequestBuilder QueryParam(Map<String, String> queryParam) {
+	public HttpRequestBuilder queryParam(Map<String, String> queryParam) {
 		req.qureyParam = queryParam;
 		return this;
 	}
 
-	public HttpRequestBuilder Body(String body) {
+	public HttpRequestBuilder body(String body) {
 		req.body = body;
 		return this;
 	}
 
-	public HttpRequestBuilder TimeOut(Integer timeOut) {
+	public HttpRequestBuilder timeOut(Integer timeOut) {
 		req.timeOut = timeOut;
 		return this;
 	}
 
-	public HttpReqWithBuilder Build() {
+	public HttpReqWithBuilder build() throws RequestValidationError {
+		ValidateHttp.validate(req);
 		return req;
 	}
 

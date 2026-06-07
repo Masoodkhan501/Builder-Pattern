@@ -3,17 +3,17 @@ package com.masood.Builder;
 import java.util.Map;
 
 public class HttpReqWithBuilder {
-	
-	public String url;
-	public String method;
-	public Map<String, String> header;
-	public Map<String, String> qureyParam;
-	public String body;
-	public Integer timeOut;	
-	
+
+	String url;
+	String method;
+	Map<String, String> header;
+	Map<String, String> qureyParam;
+	String body;
+	Integer timeOut;
+
 	HttpReqWithBuilder() {
 	}
-	
+
 	public String execute() {
 		return toString();
 	}
@@ -24,5 +24,28 @@ public class HttpReqWithBuilder {
 				+ qureyParam + ", body=" + body + ", timeOut=" + timeOut + "]";
 	}
 
-	
+	public String getUrl() {
+		return url;
+	}
+
+	public String getMethod() {
+		return method;
+	}
+
+	public Map<String, String> getHeader() {
+		return header;
+	}
+
+	public Map<String, String> getQureyParam() {
+		return qureyParam;
+	}
+
+	public String getBody() {
+		return body;
+	}
+
+	public Integer getTimeOut() {
+		return timeOut;
+	}
+
 }

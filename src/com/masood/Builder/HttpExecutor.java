@@ -11,7 +11,6 @@ public class HttpExecutor {
 	}
 	
 	public String execute() throws RequestValidationError{
-		ValidateHttp.validate(req);
 		return "everything is good. Executed perfectly";
 	}
 
