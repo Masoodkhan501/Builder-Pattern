@@ -17,6 +17,7 @@ BUILDER PATTERN
    we have 3 packages for this builder pattern to make it future proof and flow the software principles.
    
       - Builder package it contains 4 files
+
            a. HttpExecutor -> it's job is just to execute the Http Request i mean if in future you want to change how to execute the http                      request you don't need to change the complex code just need to touch it.
 
            b. HttpReqWithBuilder -> This is the actual obj of http req which contains feilds of default access specifies 
@@ -26,6 +27,7 @@ BUILDER PATTERN
            d. ValidateHttp -> Which contains the logic for validating the http req like does it have require fields we can do more validation                like does it follows the following format or not.
 
       - ExceptoinBundle package. it contains 1 file
+
            a. RequestValidationError -> This is custom error which have the list<String> of errors which can log multiple errors if occured                  so user can get full info in one go. along with it has a timestamp for convinience.
 
       - execution package. it contians the main file to run the code and catch the custom error if occured. 
