@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.masood.BuilderPatternUsingInnerClass.HttpReqBuilderInnerClass;
 import com.masood.ExceptionBundle.RequestValidationError;
 
 public class ValidateHttp {
@@ -17,6 +18,18 @@ public class ValidateHttp {
 		} if(req.getMethod() == null) {
 			errors.add("Missing METHOD field which is an important field\n\t");
 		} if(req.getTimeOut() == null) {
+			errors.add("TimeOut field can't be null for the security reasons\n\t");
+		}
+		if(!errors.isEmpty()) throw new RequestValidationError(errors,LocalDateTime.now());
+	}
+	
+	public static void validateBuilder(HttpReqBuilderInnerClass.HttpBuilder builder) throws RequestValidationError {
+		List<String> errors = new ArrayList<String>();
+		if(builder.getUrl() == null) {
+			errors.add("Missing URL which is an important field for a request\n\t");
+		} if(builder.getMethod() == null) {
+			errors.add("Missing METHOD field which is an important field\n\t");
+		} if(builder.getTimeOut() == null) {
 			errors.add("TimeOut field can't be null for the security reasons\n\t");
 		}
 		if(!errors.isEmpty()) throw new RequestValidationError(errors,LocalDateTime.now());
